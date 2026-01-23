@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 class TaxiPriceInput(BaseModel):
-    Trip_Distance_km: float = Field(ge=0.1, le=150, default=3)
+    Trip_Distance_km: float = Field(gt=0, le=10000, default=3)
     Passenger_Count: int = Field(ge=1, le=4)
     Base_Fare: float = Field(default=3.51)
     Per_Km_Rate: float = Field(default=1.23)

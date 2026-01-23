@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from taxipred.utils.constants import DATA_PATH, REGRESSOR_PATH
 from taxipred.backend.data_processing import TaxiPriceInput, PredictionOutput
 import joblib
@@ -15,6 +15,13 @@ async def read_data():
 
 @app.post("/api/predict", response_model=PredictionOutput)
 async def predict_price(payload: TaxiPriceInput):
+
+    if payload.Trip_Distance_km > 150:
+        raise HTTPException(
+            status_code=400,
+            detail="Please contact us for trips longer than 150 km."
+        )
+    
     data_to_predict = pd.DataFrame(payload.model_dump(), index=[0])
     rf = joblib.load(REGRESSOR_PATH)
     prediction = rf.predict(data_to_predict)
