@@ -16,7 +16,7 @@ st.image(image_path)
 
 with st.form("taxi_data"):
     Trip_Distance_km = st.number_input(
-        "Trip distance in km", min_value=0.1, value=1.0
+        "Trip distance in km", min_value=0.1, value=1.0, max_value=10000.0
     )
     Passenger_Count = st.number_input(
         "Number of passengers", min_value=1, max_value=4
