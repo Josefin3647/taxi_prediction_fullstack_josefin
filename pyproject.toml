@@ -1,7 +1,7 @@
 [project]
 name = "taxipred"
 version = "0.1.0"
-description = "Add your description here"
+description = "ML-model for predicting taxi prices using RandomForest"
 readme = "README.md"
 authors = [
     { name = "Josefin Lesley", email = "josefin3647@gmail.com" }
