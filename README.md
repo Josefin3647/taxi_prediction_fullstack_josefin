@@ -3,7 +3,9 @@ Fullstack ML application for predicting taxi prices.
 
 ## Project structure
 
-![Application Screenshot](images/tree_structure.png)
+<p align="center">
+  <img src="images/tree_structure.png" width="50%">
+</p>
 
 
 ## Installation
