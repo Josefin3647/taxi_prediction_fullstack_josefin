@@ -2,22 +2,11 @@
 Fullstack ML application for predicting taxi prices.
 
 ## Project structure
-
-<p align="center">
-  <img src="images/tree_structure.png" width="50%">
-</p>
-
-
-## Installation
-
-## Usage
+![Application Screenshot](images/tree_structure.png)
 
 ## API Endpoints
+Base URL (local): `http://127.0.0.1:8000`
 
-## Model
+/api/predict
+Predicts the taxi trip price from input features. 
 
-## Validation and Error Handling
-
-## Tech Stack
-
-## Future Improvements
