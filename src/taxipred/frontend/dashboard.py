@@ -1,10 +1,11 @@
 import streamlit as st
 import httpx
 from pathlib import Path
+from taxipred.utils.constants import BASE_DIR
 
 URL = "http://127.0.0.1:8000/api/predict"
 
-image_path = Path(__file__).parents[1] / "utils" / "map_phone.jpg"
+image_path = BASE_DIR / "utils" / "map_phone.jpg"
 
 st.markdown("# Taxi prediction")
 st.markdown("""

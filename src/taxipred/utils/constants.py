@@ -1,6 +1,6 @@
 from pathlib import Path
 
-DATA_PATH = Path(__file__).parents[1] / "data"
+BASE_DIR = Path(__file__).resolve().parents[1]
 
-MODEL_PATH = Path(__file__).parents[1] / "model_development"
-REGRESSOR_PATH = MODEL_PATH / "taxi_price_prediction.joblib"
+DATA_PATH = BASE_DIR / "data"
+MODEL_PATH = BASE_DIR / "backend" / "model" / "taxi_price_prediction.joblib"
