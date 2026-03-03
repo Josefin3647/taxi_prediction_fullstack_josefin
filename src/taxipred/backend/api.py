@@ -5,7 +5,7 @@ import joblib
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv(DATA_PATH / "taxi_cleaned.csv")
+df = pd.read_csv(DATA_PATH / "frontend_data.csv")
 
 app = FastAPI()
 
@@ -26,3 +26,7 @@ async def predict_price(payload: TaxiPriceInput):
     rf = joblib.load(MODEL_PATH)
     prediction = rf.predict(data_to_predict)
     return {"predicted_price": prediction[0]}
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
