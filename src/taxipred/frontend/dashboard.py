@@ -1,6 +1,5 @@
 import streamlit as st
 import httpx
-from pathlib import Path
 from taxipred.utils.constants import BASE_DIR
 
 URL = "http://127.0.0.1:8000/api/predict"
