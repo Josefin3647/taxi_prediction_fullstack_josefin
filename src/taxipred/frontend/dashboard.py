@@ -17,24 +17,41 @@ st.divider()
 
 with st.form("taxi_data"):
     Trip_Distance_km = st.number_input(
-        "Enter the trip distance in km", min_value=0.1, value=1.0, max_value=10000.0, step=0.1
+        "Enter the trip distance in km",
+        min_value=0.1,
+        value=1.0,
+        max_value=10000.0,
+        step=0.1,
+    )
+
+    Passenger_Count = st.number_input(
+        "Number of passengers", 
+        min_value=1, 
+        max_value=15, 
+        value=1, 
+        step=1
     )
 
     submitted = st.form_submit_button("Predict the Price")
 
 if submitted:
-    payload = {
-        "Trip_Distance_km": Trip_Distance_km
-    }
- 
+    if Passenger_Count > 4:
+        st.warning(
+            "For bookings with more than 4 passengers, please contact us directly."
+        )
+        st.stop()
+
+    payload = {"Trip_Distance_km": Trip_Distance_km, 
+               "Passenger_Count": Passenger_Count}
+
     response = httpx.post(URL, json=payload)
 
     if response.status_code == 200:
         prediction = response.json().get("predicted_price")
         st.metric("Predicted Price (€)", round(prediction, 2))
-    
+
     elif response.status_code == 400:
         st.warning(response.json()["detail"])
-    
+
     else:
         st.error("Something went wrong. Please try again.")
