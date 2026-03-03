@@ -18,11 +18,13 @@ The user enters trip distance and number of passengers, and the model returns an
 
 ## Dashboard Preview
 
-<p align="center">
-  <img src="images/dashboard.png" width="500"/>
-</p>
+![Taxi Dashboard](images/application_prediction.png)
+
+![Taxi Dashboard](images/application_data.png)
 
 ---
+
+
 
 ## Project Structure
 
