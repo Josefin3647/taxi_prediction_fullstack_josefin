@@ -18,7 +18,11 @@ The user enters trip distance and number of passengers, and the model returns an
 
 ## Dashboard Preview
 
-![Taxi Dashboard](images/application_prediction.png)
+<p align="center">
+  <img src="images/dashboard.png" width="500"/>
+</p>
+
+---
 
 ## Project Structure
 
@@ -117,6 +121,5 @@ The trained model is stored as a serialized file in the `model/` directory.
 
 ## Acknowledgements
 
-Parts of this project were developed with assistance from ChatGPT (OpenAI)  
-for guidance on FastAPI, Streamlit integration, and code structure.  
+Parts of this project were developed with assistance from ChatGPT (OpenAI) for guidance on FastAPI, Streamlit integration, and code structure.  
 All implementation decisions and final code adjustments were made by the author.
